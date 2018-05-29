@@ -1,7 +1,7 @@
 {
   "name": "grunt-jsdoc-joel",
   "description": "Integrates jsdoc3 generation into your Grunt build",
-  "version": "2.2.2",
+  "version": "2.2.3",
   "homepage": "https://github.com/joelbarba/grunt-jsdoc",
   "author": {
     "name": "Joel Barba",
