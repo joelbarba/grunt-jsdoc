@@ -19,6 +19,8 @@ var exec = require('./lib/exec');
 module.exports = function jsDocTask(grunt) {
     'use strict';
 
+    grunt.log.writeln('Ini: JS DOC');
+
     var errorCode = {
         generic: 1,
         task: 3
@@ -29,6 +31,7 @@ module.exports = function jsDocTask(grunt) {
 
     //bind the task to the grunt context
     grunt.registerMultiTask('jsdoc', 'Generates source documentation using jsdoc', function registerJsdocTask() {
+        grunt.log.writeln('JsDoc: Registering TASK');
 
         var jsdoc,
             child;
@@ -101,10 +104,22 @@ module.exports = function jsDocTask(grunt) {
         }
 
         //execution of the jsdoc command
+        grunt.log.writeln('JsDoc: Launching Spawned Process');
         grunt.event.emit('generating.jsdoc', jsdoc, sources, params);
         child = exec.buildSpawned(grunt, jsdoc, sources, params);
 
-        child.stdout.on('data', grunt.log.debug);
+        // child.stdout.on('data', grunt.log.debug);
+        child.stdout.on('data', function(buffer) {
+            var msg = '';
+            buffer.forEach(function(char) {
+                if (char !== 10) {
+                    // msg += ' - ' + char;
+                    msg += String.fromCharCode(char);
+                }
+            });
+            grunt.log.writeln(msg);
+        });
+
         child.stderr.on('data', function(data) {
             grunt.log.debug(data);
             if (!options.ignoreWarnings) {
@@ -112,6 +127,7 @@ module.exports = function jsDocTask(grunt) {
             }
         });
         child.on('exit', function(code) {
+            grunt.log.writeln('JsDoc: Done');
             var resolvedDest;
             if (code === 0) {
                 if(options.destination){
