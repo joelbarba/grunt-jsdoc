@@ -1,26 +1,19 @@
 {
-  "name": "grunt-jsdoc",
+  "name": "grunt-jsdoc-joel",
   "description": "Integrates jsdoc3 generation into your Grunt build",
-  "version": "2.2.1",
-  "homepage": "https://github.com/krampstudio/grunt-jsdoc",
+  "version": "2.2.2",
+  "homepage": "https://github.com/joelbarba/grunt-jsdoc",
   "author": {
-    "name": "Bertrand Chevrier",
-    "email": "chevrier.bertrand@gmail.com",
-    "url": "http://krampstudio.com"
+    "name": "Joel Barba",
+    "email": "joel.barba.vidal@gmail.com"
   },
   "contributors": [
-    {
-      "name": "Mikhail Diatchenko",
-      "email": "mikhail.diatchenko@gmail.com",
-      "url": "http://www.webgear.co.nz"
-    }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/krampstudio/grunt-jsdoc.git"
+    "url": "https://github.com/joelbarba/grunt-jsdoc.git"
   },
   "bugs": {
-    "url": "https://github.com/krampstudio/grunt-jsdoc/issues"
   },
   "license": "MIT",
   "main": "Gruntfile.js",
