@@ -19,7 +19,7 @@ var exec = require('./lib/exec');
 module.exports = function jsDocTask(grunt) {
     'use strict';
 
-    grunt.log.writeln('Ini: JS DOC');
+    // grunt.log.writeln('Ini: JS DOC');
 
     var errorCode = {
         generic: 1,
